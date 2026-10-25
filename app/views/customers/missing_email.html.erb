@@ -1,0 +1,14 @@
+<main class="customers-page">
+  <h1>Customers Missing Email</h1>
+  <%= render "navigation" %>
+
+  <% if @customers.empty? %>
+    <p>All customers have an email address.</p>
+  <% else %>
+    <div class="customer-grid">
+      <% @customers.each do |customer| %>
+        <%= render "customer", customer: customer %>
+      <% end %>
+    </div>
+  <% end %>
+</main>
